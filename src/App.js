@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <nav className={`site-nav ${navScrolled ? 'site-nav--scrolled' : ''}`}>
         <div className="site-nav__inner">
-          <a href="#" className="site-nav__logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} aria-label="HOAM Facility Management - Home">
+          <a href="/" className="site-nav__logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} aria-label="HOAM Facility Management - Home">
             <img src={`${process.env.PUBLIC_URL}/hoam-logo.svg`} alt="HOAM Facility Management" className="site-nav__logo-img" />
           </a>
           <button type="button" className="site-nav__toggle" aria-expanded={navOpen} aria-label="Toggle menu" onClick={() => setNavOpen(!navOpen)}>
@@ -293,12 +293,11 @@ function App() {
               </li>
             </ul>
             <div className="app-section__badges">
-              <a
-                href="#"
+              <button
+                type="button"
                 className="app-section__badge app-section__badge--apple"
                 title="Coming Soon"
                 aria-label="Download on the App Store (coming soon)"
-                onClick={(e) => e.preventDefault()}
               >
                 <span className="app-section__badge-text">
                   <span className="app-section__badge-icon app-section__badge-icon--apple" aria-hidden>
@@ -310,13 +309,12 @@ function App() {
                   </span>
                 </span>
                 <span className="app-section__badge-soon">Coming Soon</span>
-              </a>
-              <a
-                href="#"
+              </button>
+              <button
+                type="button"
                 className="app-section__badge app-section__badge--google"
                 title="Coming Soon"
                 aria-label="Get it on Google Play (coming soon)"
-                onClick={(e) => e.preventDefault()}
               >
                 <span className="app-section__badge-text">
                   <span className="app-section__badge-icon app-section__badge-icon--google" aria-hidden>
@@ -328,7 +326,7 @@ function App() {
                   </span>
                 </span>
                 <span className="app-section__badge-soon">Coming Soon</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
