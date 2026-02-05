@@ -250,7 +250,11 @@ function App() {
           <div className="app-section__phone-wrap">
             <div className="app-section__phone">
               <div className="app-section__phone-screen">
-                <span className="app-section__phone-placeholder">HOAM App</span>
+                <img
+                  src={`${process.env.PUBLIC_URL}/app.png`}
+                  alt="HOAM App screenshot"
+                  className="app-section__phone-img"
+                />
               </div>
             </div>
           </div>
