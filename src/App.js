@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const [navOpen, setNavOpen] = useState(false);
   const [navScrolled, setNavScrolled] = useState(false);
+  const [heroImageLoaded, setHeroImageLoaded] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -40,7 +41,9 @@ function App() {
           <img
             src={`${process.env.PUBLIC_URL}/hero.png`}
             alt="Giga City aerial view at night"
-            className="hero__bg-image"
+            className={`hero__bg-image ${heroImageLoaded ? 'hero__bg-image--loaded' : ''}`}
+            onLoad={() => setHeroImageLoaded(true)}
+            onError={() => setHeroImageLoaded(true)}
           />
           <div className="hero__overlay" aria-hidden="true" />
         </div>
